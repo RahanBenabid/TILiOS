@@ -1,4 +1,4 @@
-/// Copyright (c) 2019 Razeware LLC
+/// Copyright (c) 2021 Razeware LLC
 /// 
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -26,18 +26,30 @@
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
 
+import Foundation
 import UIKit
 
-@UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
-  var window: UIWindow?
+enum AuthResult {
+  case success
+  case failure
+}
 
-  func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
-    if Auth().token == nil {
-      let rootController = UIStoryboard(name: "Login", bundle: Bundle.main)
-        .instantiateViewController(withIdentifier: "LoginNavigation")
-      window?.rootViewController = rootController
+class Auth {
+  static let keychainKey = "TIL-API-KEY"
+
+  var token: String? {
+    get {
+      Keychain.load(key: Auth.keychainKey)
     }
-    return true
+    set {
+      if let newToken = newValue {
+        Keychain.save(key: Auth.keychainKey, data: newToken)
+      } else {
+        Keychain.delete(key: Auth.keychainKey)
+      }
+    }
+  }
+
+  func logout() {
   }
 }

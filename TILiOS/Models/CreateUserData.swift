@@ -1,4 +1,4 @@
-/// Copyright (c) 2019 Razeware LLC
+/// Copyright (c) 2021 Razeware LLC
 /// 
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -26,18 +26,17 @@
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
 
-import UIKit
+import Foundation
 
-@UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
-  var window: UIWindow?
+final class CreateUserData: Codable {
+  var id: UUID?
+  var name: String
+  var username: String
+  var password: String?
 
-  func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
-    if Auth().token == nil {
-      let rootController = UIStoryboard(name: "Login", bundle: Bundle.main)
-        .instantiateViewController(withIdentifier: "LoginNavigation")
-      window?.rootViewController = rootController
-    }
-    return true
+  init(name: String, username: String, password: String) {
+    self.name = name
+    self.username = username
+    self.password = password
   }
 }

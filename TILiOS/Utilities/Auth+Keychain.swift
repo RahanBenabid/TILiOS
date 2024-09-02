@@ -1,4 +1,4 @@
-/// Copyright (c) 2019 Razeware LLC
+/// Copyright (c) 2021 Razeware LLC
 /// 
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -26,18 +26,54 @@
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
 
+import Security
 import UIKit
 
-@UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
-  var window: UIWindow?
+enum Keychain {
+  @discardableResult
+  static func save(key: String, data: String) -> OSStatus {
+    let bytes: [UInt8] = .init(data.utf8)
+    let bytesAsData = Data(bytes)
+    let query = [
+      kSecClass: kSecClassGenericPassword,
+      kSecAttrAccount: key,
+      kSecValueData: bytesAsData
+    ] as [CFString: Any]
 
-  func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
-    if Auth().token == nil {
-      let rootController = UIStoryboard(name: "Login", bundle: Bundle.main)
-        .instantiateViewController(withIdentifier: "LoginNavigation")
-      window?.rootViewController = rootController
+    SecItemDelete(query as CFDictionary)
+
+    return SecItemAdd(query as CFDictionary, nil)
+  }
+
+  @discardableResult
+  static func delete(key: String) -> OSStatus {
+    let query = [
+      kSecClass: kSecClassGenericPassword,
+      kSecAttrAccount: key
+    ] as [CFString: Any]
+
+    return SecItemDelete(query as CFDictionary)
+  }
+
+  static func load(key: String) -> String? {
+    let query = [
+      kSecClass: kSecClassGenericPassword,
+      kSecAttrAccount: key,
+      kSecReturnData: kCFBooleanTrue as Any,
+      kSecMatchLimit: kSecMatchLimitOne
+    ] as [CFString: Any]
+
+    var dataTypeRef: AnyObject?
+
+    let status: OSStatus = SecItemCopyMatching(query as CFDictionary, &dataTypeRef)
+
+    if status == noErr {
+      guard let data = dataTypeRef as? Data else {
+        return nil
+      }
+      return String(decoding: data, as: UTF8.self)
+    } else {
+      return nil
     }
-    return true
   }
 }
