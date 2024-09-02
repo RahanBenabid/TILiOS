@@ -13,6 +13,13 @@
 		2323AF7B24BDFD1D00D2E1B6 /* ResourceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2323AF7A24BDFD1D00D2E1B6 /* ResourceRequest.swift */; };
 		233638932062B99A001588B0 /* AcronymsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233638922062B99A001588B0 /* AcronymsTableViewController.swift */; };
 		236A123F207BFBC400931AD3 /* AddToCategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236A123E207BFBC400931AD3 /* AddToCategoryTableViewController.swift */; };
+		238992C824CF12D30078A7BE /* AcronymRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238992C724CF12D30078A7BE /* AcronymRequest.swift */; };
+		23A3787C2592494F005B34F6 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23A3787B2592494F005B34F6 /* Login.storyboard */; };
+		23A3788125924BBA005B34F6 /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A3788025924BBA005B34F6 /* Auth.swift */; };
+		23A3788625924D5E005B34F6 /* LoginTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A3788525924D5E005B34F6 /* LoginTableViewController.swift */; };
+		23A3788925924E9F005B34F6 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A3788825924E9F005B34F6 /* Token.swift */; };
+		23A3788F25925019005B34F6 /* Auth+Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A3788E25925019005B34F6 /* Auth+Keychain.swift */; };
+		23AEEBE325925BB7000E20E9 /* CreateUserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AEEBE225925BB7000E20E9 /* CreateUserData.swift */; };
 		23FBBD842066980600DBFA59 /* UsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FBBD832066980600DBFA59 /* UsersTableViewController.swift */; };
 		23FBBD862066982500DBFA59 /* CategoriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FBBD852066982500DBFA59 /* CategoriesTableViewController.swift */; };
 		23FBBD8920669D1B00DBFA59 /* Acronym.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FBBD8820669D1B00DBFA59 /* Acronym.swift */; };
@@ -23,9 +30,7 @@
 		23FBBD952066A67B00DBFA59 /* CreateUserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FBBD942066A67B00DBFA59 /* CreateUserTableViewController.swift */; };
 		23FBBD972066ADCB00DBFA59 /* AcronymsDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FBBD962066ADCB00DBFA59 /* AcronymsDetailTableViewController.swift */; };
 		23FBBD992066AE8F00DBFA59 /* CreateAcronymTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FBBD982066AE8F00DBFA59 /* CreateAcronymTableViewController.swift */; };
-		23FBBD9B2066AFAE00DBFA59 /* SelectUserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FBBD9A2066AFAE00DBFA59 /* SelectUserTableViewController.swift */; };
 		5C2901831F8F6DE700803663 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C2901821F8F6DE700803663 /* LaunchScreen.storyboard */; };
-		B60DD1D92C656B3100B07408 /* AcronymRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60DD1D82C656B3100B07408 /* AcronymRequest.swift */; };
 		D2A5F2091F4A9144005CD714 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2A5F2071F4A9144005CD714 /* Main.storyboard */; };
 		D2A5F20B1F4A9144005CD714 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2A5F20A1F4A9144005CD714 /* Assets.xcassets */; };
 		D2A5F2211F4A96D0005CD714 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A5F2201F4A96D0005CD714 /* AppDelegate.swift */; };
@@ -38,6 +43,13 @@
 		2323AF7A24BDFD1D00D2E1B6 /* ResourceRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceRequest.swift; sourceTree = "<group>"; };
 		233638922062B99A001588B0 /* AcronymsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcronymsTableViewController.swift; sourceTree = "<group>"; };
 		236A123E207BFBC400931AD3 /* AddToCategoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToCategoryTableViewController.swift; sourceTree = "<group>"; };
+		238992C724CF12D30078A7BE /* AcronymRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcronymRequest.swift; sourceTree = "<group>"; };
+		23A3787B2592494F005B34F6 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		23A3788025924BBA005B34F6 /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
+		23A3788525924D5E005B34F6 /* LoginTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTableViewController.swift; sourceTree = "<group>"; };
+		23A3788825924E9F005B34F6 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
+		23A3788E25925019005B34F6 /* Auth+Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Auth+Keychain.swift"; sourceTree = "<group>"; };
+		23AEEBE225925BB7000E20E9 /* CreateUserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserData.swift; sourceTree = "<group>"; };
 		23FBBD832066980600DBFA59 /* UsersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersTableViewController.swift; sourceTree = "<group>"; };
 		23FBBD852066982500DBFA59 /* CategoriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesTableViewController.swift; sourceTree = "<group>"; };
 		23FBBD8820669D1B00DBFA59 /* Acronym.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Acronym.swift; sourceTree = "<group>"; };
@@ -48,9 +60,7 @@
 		23FBBD942066A67B00DBFA59 /* CreateUserTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserTableViewController.swift; sourceTree = "<group>"; };
 		23FBBD962066ADCB00DBFA59 /* AcronymsDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcronymsDetailTableViewController.swift; sourceTree = "<group>"; };
 		23FBBD982066AE8F00DBFA59 /* CreateAcronymTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAcronymTableViewController.swift; sourceTree = "<group>"; };
-		23FBBD9A2066AFAE00DBFA59 /* SelectUserTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectUserTableViewController.swift; sourceTree = "<group>"; };
 		5C2901821F8F6DE700803663 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		B60DD1D82C656B3100B07408 /* AcronymRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcronymRequest.swift; sourceTree = "<group>"; };
 		D2A5F2001F4A9144005CD714 /* TILiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TILiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2A5F2081F4A9144005CD714 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D2A5F20A1F4A9144005CD714 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -76,6 +86,8 @@
 				23FBBD8A20669D3300DBFA59 /* User.swift */,
 				23FBBD8C20669D4F00DBFA59 /* Category.swift */,
 				2323AF7624BDF52600D2E1B6 /* CreateAcronymData.swift */,
+				23A3788825924E9F005B34F6 /* Token.swift */,
+				23AEEBE225925BB7000E20E9 /* CreateUserData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -87,11 +99,11 @@
 				23FBBD832066980600DBFA59 /* UsersTableViewController.swift */,
 				23FBBD852066982500DBFA59 /* CategoriesTableViewController.swift */,
 				23FBBD922066A67000DBFA59 /* CreateCategoryTableViewController.swift */,
-				23FBBD982066AE8F00DBFA59 /* CreateAcronymTableViewController.swift */,
 				23FBBD942066A67B00DBFA59 /* CreateUserTableViewController.swift */,
 				23FBBD962066ADCB00DBFA59 /* AcronymsDetailTableViewController.swift */,
-				23FBBD9A2066AFAE00DBFA59 /* SelectUserTableViewController.swift */,
+				23FBBD982066AE8F00DBFA59 /* CreateAcronymTableViewController.swift */,
 				236A123E207BFBC400931AD3 /* AddToCategoryTableViewController.swift */,
+				23A3788525924D5E005B34F6 /* LoginTableViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -99,11 +111,13 @@
 		23FBBD8F20669D9A00DBFA59 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				23A3788025924BBA005B34F6 /* Auth.swift */,
+				23A3788E25925019005B34F6 /* Auth+Keychain.swift */,
 				2323AF7224B8B82100D2E1B6 /* ResourceRequestError.swift */,
 				23FBBD9020669DAD00DBFA59 /* ErrorPresenter.swift */,
 				2323AF7824BDF57700D2E1B6 /* AddToCategoryError.swift */,
 				2323AF7A24BDFD1D00D2E1B6 /* ResourceRequest.swift */,
-				B60DD1D82C656B3100B07408 /* AcronymRequest.swift */,
+				238992C724CF12D30078A7BE /* AcronymRequest.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -141,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				D2A5F2071F4A9144005CD714 /* Main.storyboard */,
+				23A3787B2592494F005B34F6 /* Login.storyboard */,
 				23FBBD8E20669D8A00DBFA59 /* ViewControllers */,
 				23FBBD8720669D1000DBFA59 /* Models */,
 				23FBBD8F20669D9A00DBFA59 /* Utilities */,
@@ -177,7 +192,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0900;
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 1230;
 				ORGANIZATIONNAME = "Ray Wenderlich";
 				TargetAttributes = {
 					D2A5F1FF1F4A9144005CD714 = {
@@ -209,6 +224,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23A3787C2592494F005B34F6 /* Login.storyboard in Resources */,
 				D2A5F20B1F4A9144005CD714 /* Assets.xcassets in Resources */,
 				5C2901831F8F6DE700803663 /* LaunchScreen.storyboard in Resources */,
 				D2A5F2091F4A9144005CD714 /* Main.storyboard in Resources */,
@@ -234,7 +250,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ -f ~/com.raywenderlich.swiftlint.yml ]; then\n  if which swiftlint >/dev/null; then\n    swiftlint --config ~/com.raywenderlich.swiftlint.yml\n  fi\nfi\n";
+			shellScript = "if [ -f ~/com.raywenderlich.swiftlint.yml ]; then\n  if which swiftlint >/dev/null; then\n    swiftlint --no-cache --config ~/com.raywenderlich.swiftlint.yml\n  fi\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -250,18 +266,22 @@
 				23FBBD8920669D1B00DBFA59 /* Acronym.swift in Sources */,
 				23FBBD932066A67000DBFA59 /* CreateCategoryTableViewController.swift in Sources */,
 				23FBBD992066AE8F00DBFA59 /* CreateAcronymTableViewController.swift in Sources */,
+				23A3788925924E9F005B34F6 /* Token.swift in Sources */,
 				236A123F207BFBC400931AD3 /* AddToCategoryTableViewController.swift in Sources */,
 				23FBBD8B20669D3300DBFA59 /* User.swift in Sources */,
 				233638932062B99A001588B0 /* AcronymsTableViewController.swift in Sources */,
 				2323AF7724BDF52600D2E1B6 /* CreateAcronymData.swift in Sources */,
-				23FBBD9B2066AFAE00DBFA59 /* SelectUserTableViewController.swift in Sources */,
+				23AEEBE325925BB7000E20E9 /* CreateUserData.swift in Sources */,
 				2323AF7324B8B82100D2E1B6 /* ResourceRequestError.swift in Sources */,
+				23A3788F25925019005B34F6 /* Auth+Keychain.swift in Sources */,
 				2323AF7B24BDFD1D00D2E1B6 /* ResourceRequest.swift in Sources */,
 				23FBBD842066980600DBFA59 /* UsersTableViewController.swift in Sources */,
-				B60DD1D92C656B3100B07408 /* AcronymRequest.swift in Sources */,
+				23A3788125924BBA005B34F6 /* Auth.swift in Sources */,
+				238992C824CF12D30078A7BE /* AcronymRequest.swift in Sources */,
 				23FBBD862066982500DBFA59 /* CategoriesTableViewController.swift in Sources */,
 				23FBBD8D20669D4F00DBFA59 /* Category.swift in Sources */,
 				23FBBD972066ADCB00DBFA59 /* AcronymsDetailTableViewController.swift in Sources */,
+				23A3788625924D5E005B34F6 /* LoginTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,6 +324,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -329,7 +350,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -364,6 +385,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -383,7 +405,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";

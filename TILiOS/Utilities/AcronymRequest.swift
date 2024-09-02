@@ -74,6 +74,11 @@ struct AcronymRequest {
 		) -> Void
 	) {
 		do {
+			guard let token = Auth().token else {
+				Auth().logout()
+				return
+			}
+			
 			// configure the Request, body, method and all
 			var urlRequest = URLRequest(url: resource)
 			urlRequest.httpMethod = "PUT"
@@ -81,14 +86,23 @@ struct AcronymRequest {
 			urlRequest.addValue(
 				"application/json",
 				forHTTPHeaderField: "Content-Type")
+			urlRequest.addValue(
+				"Bearer \(token)",
+				forHTTPHeaderField: "Authorization")
 			let dataTask = URLSession.shared
 				.dataTask(with: urlRequest) { data, response, _ in
-					// make sure the response is 200
+					// make sure the response is 200, or else call logout
+					guard let httpResponse = response as? HTTPURLResponse else {
+						completion(.failure(.noData))
+						return
+					}
 					guard
-						let httpResponse = response as? HTTPURLResponse,
 						httpResponse.statusCode == 200,
 						let jsonData = data
 					else {
+						if httpResponse.statusCode == 401 {
+							Auth().logout()
+						}
 						completion(.failure(.noData))
 						return
 					}
@@ -108,9 +122,16 @@ struct AcronymRequest {
 	}
 	
 	func delete() {
+		guard let token = Auth().token else {
+			Auth().logout()
+			return
+		}
 		// create urlRequest and set the Method
 		var urlRequest = URLRequest(url: resource)
 		urlRequest.httpMethod = "DELETE"
+		urlRequest.addValue(
+			"Bearer \(token)",
+			forHTTPHeaderField: "Authorization")
 		// Create a data task for the request using the shared URLSession and send the request
 		let dataTask = URLSession.shared.dataTask(with: urlRequest)
 		dataTask.resume()
@@ -119,38 +140,49 @@ struct AcronymRequest {
 	func add(
 		category: Category,
 		completion: @escaping (Result<Void, CategoryAddError>) -> Void) {
-		// Ensure the category has a valid ID
-		guard let categoryID = category.id else {
-			completion(.failure(.noID)) // Return an error if no ID is found
-			return
-		}
-		
-		// Construct the URL for the POST request
-		let url = resource
-			.appendingPathComponent("categories") // Add "categories" to the path
-			.appendingPathComponent("\(categoryID)") // Add the category ID to the path
-		
-		// Create a URLRequest for the specified URL
-		var urlRequest = URLRequest(url: url)
-		urlRequest.httpMethod = "POST" // Set the HTTP method to POST
-		
-		// Create a data task to send the request
-		let dataTask = URLSession.shared
-			.dataTask(with: urlRequest) { _, response, _ in
-				// Ensure the response is valid and has a status code of 201 (Created)
-				guard
-					let httpResponse = response as? HTTPURLResponse,
-					httpResponse.statusCode == 201
-				else {
-					completion(.failure(.invalidResponse)) // Return an error for invalid response
-					return
-				}
-				
-				// If the request is successful, call the completion handler with success
-				completion(.success(()))
+			// Ensure the category has a valid ID
+			guard let categoryID = category.id else {
+				completion(.failure(.noID)) // Return an error if no ID is found
+				return
 			}
-		
-		// Start the data task
-		dataTask.resume()
-	}
+			
+			guard let token = Auth().token else {
+				Auth().logout()
+				return
+			}
+			
+			// Construct the URL for the POST request
+			let url = resource
+				.appendingPathComponent("categories") // Add "categories" to the path
+				.appendingPathComponent("\(categoryID)") // Add the category ID to the path
+			
+			// Create a URLRequest for the specified URL
+			var urlRequest = URLRequest(url: url)
+			urlRequest.httpMethod = "POST" // Set the HTTP method to POST
+			urlRequest.addValue(
+				"Bearer \(token)",
+				forHTTPHeaderField: "Authorization")
+			// Create a data task to send the request
+			let dataTask = URLSession.shared
+				.dataTask(with: urlRequest) { _, response, _ in
+					// Ensure the response is valid and has a status code of 201 (Created)
+					guard let httpResponse = response as? HTTPURLResponse else {
+						completion(.failure(.invalidResponse))
+						return
+					}
+					guard httpResponse.statusCode == 201 else {
+						if httpResponse.statusCode == 401 {
+							Auth().logout()
+						}
+						completion(.failure(.invalidResponse))
+						return
+					}
+					
+					// If the request is successful, call the completion handler with success
+					completion(.success(()))
+				}
+			
+			// Start the data task
+			dataTask.resume()
+		}
 }
