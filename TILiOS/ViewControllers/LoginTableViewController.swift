@@ -1,7 +1,6 @@
 import UIKit
 import AuthenticationServices
 
-let apiHostname = "http://127.0.0.1:8080"
 
 @available(iOS 13.0, *)
 class LoginTableViewController: UITableViewController {

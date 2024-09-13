@@ -1,5 +1,6 @@
 import Foundation
 
+let apiHostname = "http://192.168.1.70:8080"
 struct ResourceRequest<ResourceType> where ResourceType: Codable {
 	let baseURL = "http://localhost:8080/api/"
 	let resourceURL: URL
